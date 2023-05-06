@@ -13,10 +13,16 @@
  * Example: export const getPromise = <Your promise constructor code>
  *          getPromise.then(<Your onFulfilled callback code>)
  */
-
 // Your code goes here
 
+export const getPromise = new Promise((resolve, reject) => {
+  setTimeout(resolve, 1000, "The PROMISE was RESOLVED");
+});
 
+getPromise.then((result) => {
+  console.log(result);
+  return result;
+});
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-1"
